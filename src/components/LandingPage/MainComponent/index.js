@@ -53,7 +53,7 @@ function MainComponent() {
           <RWebShare
             data={{
               text: "CryptoDashboard made by Manjeet Maan using React JS.",
-              url: "https://mannmanjeet988.github.io/crypto_tracker_website/",
+              url: "https://crypto-tracker-project-eight.vercel.app/",
               title: "CryptoTracker.",
             }}
             onClick={() => toast.info("App Shared!")}
