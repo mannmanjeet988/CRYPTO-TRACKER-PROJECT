@@ -46,9 +46,7 @@ const ComparePage = () => {
       settingChartData(
         setChartData,
         prices1,
-        prices2,
-        crypto1Data,
-        crypto2Data
+        prices2
       );
       console.log("Both PRICES>>>", prices1, prices2);
       setIsLoading(false);
@@ -60,7 +58,7 @@ const ComparePage = () => {
     setDays(event.target.value);
     const prices1 = await getCoinPrices(crypto1, event.target.value, priceType);
     const prices2 = await getCoinPrices(crypto2, event.target.value, priceType);
-    settingChartData(setChartData, prices1, prices2, crypto1Data, crypto2Data);
+    settingChartData(setChartData, prices1, prices2);
     setIsLoading(false);
   }
 
@@ -81,14 +79,12 @@ const ComparePage = () => {
       const data1 = await getCoinData(event.target.value);
       coinObject(setCrypto1Data, data1); //For Coin Obj being passed in the List
       if (data1) {       
-        const prices1 = await getCoinPrices((crypto1, days, priceType));
+        const prices1 = await getCoinPrices((event.target.value, days, priceType));
         const prices2 = await getCoinPrices(crypto2, days, priceType);
         settingChartData(
           setChartData,
           prices1,
-          prices2,
-          crypto1Data,
-          crypto2Data
+          prices2      
         );
         console.log("CHANGED COIN PRICES 1st", prices1, prices2)
       }
@@ -101,15 +97,13 @@ const ComparePage = () => {
         
         const prices1 = await getCoinPrices(crypto1, days, priceType);
         const prices2 = await getCoinPrices(
-          (crypto2, days, priceType)
+          (event.target.value, days, priceType)
         );
         console.log("CHANGED COIN PRICES 2nd", prices1, prices2)
         settingChartData(
           setChartData,
           prices1,
-          prices2,
-          crypto2Data,
-          crypto1Data
+          prices2
         );
       }
     }

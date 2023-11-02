@@ -11,3 +11,10 @@
     display: flex;
     flex-direction: column;
 }
+
+@media only screen and(max-width:500px) {
+    .select-days{
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+    }  
+}

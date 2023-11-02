@@ -64,13 +64,14 @@ function LineChart({ chartData, priceType, multiAxis }) {
   const options = {
     plugins: {
       legend: {
-        position:'top',
+        // position:"top",
         display: multiAxis ? true: false,
       },
-      title: {
-        display: true,
-        text: 'Comparison between Crypto1 and Crypto2'
-      }
+      //  title: multiAxis && {
+      //   display: true,
+      //   text: 'Comparison between Crypto1 and Crypto2'
+      // }
+      
     },
     responsive: true,
     interaction: {
@@ -78,7 +79,7 @@ function LineChart({ chartData, priceType, multiAxis }) {
       intersect: false,
     },
     scales: {
-      crypto2: {
+      crypto1: {
         type: "linear",
         display: true,
         position: "right",
@@ -94,7 +95,7 @@ function LineChart({ chartData, priceType, multiAxis }) {
           },
         },
       },
-      crypto1: {
+      crypto2: multiAxis && {
         type: "linear",
         display: true,
         position: "left",
@@ -110,6 +111,7 @@ function LineChart({ chartData, priceType, multiAxis }) {
           },
         },
       },
+      
     },
   };
 
