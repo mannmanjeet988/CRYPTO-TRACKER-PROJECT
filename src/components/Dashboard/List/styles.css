@@ -210,6 +210,20 @@
           }
       }
 
+  @media only screen and (max-width:480px){
+    .mobile-td-mkt-cap,.market-cap {
+      display: none;
+    }
+
+    .price-chip{
+margin-left:-0.5rem;
+    }
+
+    .coin-price{
+      margin-left:0.5rem;
+    }
+  }
+
       
       
     

@@ -1,10 +1,14 @@
 .coin-page-component{
     background-color: var(--darkgrey);
-    margin:1.5rem;
+    margin:1.5rem auto;
     padding: 1rem;
     border-radius: 1rem;
     display:block;
     width:90%;
+  }
+
+  .chart-container{
+    margin:1.5rem  auto;
   }
 
   /* .grey-wrapper{
@@ -31,6 +35,6 @@
     /* margin-left: auto;
     margin-right: auto; */
     margin-bottom: 1rem;
-    margin: 0rem 1.5rem;
+   
   }
 

@@ -6,10 +6,10 @@ import Footer from "../../components/Common/Footer"
 
 function HomePage(){
     return(
-        <div>
+        <div className="home-container">
             <Header />
             <MainComponent/>
-            {/* <Footer /> */}
+            <Footer />
             
         </div>
     )
