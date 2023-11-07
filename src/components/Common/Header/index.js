@@ -4,7 +4,8 @@ import TemporaryDrawer from "./drawer"
 import Button from "../Button"
 import { Link } from "react-router-dom"
 import Switch from "@mui/material/Switch";
-import { toast } from "react-toastify";
+import {ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Header(){
@@ -13,13 +14,13 @@ function Header(){
     localStorage.getItem("theme")==="dark"?true:false
     );
 
-    useEffect(()=>{
-      if(localStorage.getItem("theme")!=="dark"){
-        setDark()
-      } else{
-        setLight()
-      }
-    },[])
+    // useEffect(()=>{
+    //   if(localStorage.getItem("theme")!=="dark"){
+    //     setDark()
+    //   } else{
+    //     setLight()
+    //   }
+    // },[])
 
     const changeMode = () => {
       if (localStorage.getItem("theme") != "dark") {

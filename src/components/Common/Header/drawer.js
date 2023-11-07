@@ -6,7 +6,8 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Switch from "@mui/material/Switch";
-import { toast } from "react-toastify";
+import { ToastContainer,toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function TemporaryDrawer() {

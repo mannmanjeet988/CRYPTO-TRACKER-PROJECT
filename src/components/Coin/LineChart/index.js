@@ -64,7 +64,7 @@ function LineChart({ chartData, priceType, multiAxis }) {
   const options = {
     plugins: {
       legend: {
-        // position:"top",
+         position:"top",
         display: multiAxis ? true: false,
       },
       //  title: multiAxis && {

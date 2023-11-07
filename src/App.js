@@ -11,11 +11,13 @@ import { Dashboard } from '@mui/icons-material';
 import CoinPage from './pages/CoinPage';
 import ComparePage from './pages/ComparePage.js/index.js';
 import WatchListPage from './pages/Watchlist/WatchListPage';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
     <div className="App">
       {/* <Footer/> */}
+      <ToastContainer />
       <BrowserRouter>
           <Routes>
             <Route path="/"  element ={<HomePage />} />
@@ -25,6 +27,7 @@ function App() {
             <Route path="/watchlist" element ={<WatchListPage />} />
           </Routes>
       </BrowserRouter>
+      
     </div>
   );
 }

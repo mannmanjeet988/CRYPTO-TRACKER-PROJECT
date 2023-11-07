@@ -9,7 +9,9 @@ export const RemoveFromWatchlist = (e, id, setIsCoinAdded) => {
     setIsCoinAdded(false);
     localStorage.setItem("watchlist", JSON.stringify(newList));
     toast.success(
-      "${id.slice(0,1).toUpperCase() + id.slice(1)} removed from watchlist!"
+      `${
+        id.substring(0, 1).toUpperCase() + id.substring(1)
+      }-removed from watchlist!`
     );
     window.location.reload();
   } else {
