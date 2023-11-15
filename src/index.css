@@ -12,15 +12,17 @@
   --red: #f94141;
 }
 
+
 body {
   margin: 0;
+  padding-bottom:4rem;
   /* height: 200vh; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:  var(--black);
   color:var(--white);
   font-family: 'Inter', sans-serif;
-  height:150vh;
+  /* height:150vh; */
 }
 
 html{

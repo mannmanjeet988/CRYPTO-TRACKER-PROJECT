@@ -1,15 +1,15 @@
 .footer {
-  /* position:fixed; */
+   position:absolute; 
   /* box-sizing:border-box; */
   
-  /* bottom: 0px; */
+   bottom: 0px; 
   width: 92vw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 1rem;
     margin: 0rem 3rem;
-    margin-top: 160px !important;
+    margin-top: 240px !important;
     height: auto;
     gap:2rem;
     border-radius: 0.75rem;

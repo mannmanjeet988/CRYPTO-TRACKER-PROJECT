@@ -12,7 +12,7 @@ import Footer from "../../Common/Footer";
 function MainComponent() {
   return (
     <div className="flex-box">
-      <div className="left-container">
+       <div className="left-container">
         <motion.h1
           className="track-crypto-heading"
           initial={{ opacity: 0, y: 50 }}
@@ -48,19 +48,9 @@ function MainComponent() {
             {" "}
             <Button text={"Dashboard"} />
           </Link>
-          {/*web sharing part  */}
-          {/* <RWebShare
-            data={{
-              text: "CryptoDashboard made by Manjeet Maan using React JS.",
-              url: "https://crypto-tracker-project-eight.vercel.app/",
-              title: "CryptoTracker.",
-            }}
-            onClick={() => toast.info("App Shared!")}
-          >
-            <Button text={"Share"} outlined={true} />
-          </RWebShare> */}
           
-          <RWebShare
+          
+         <RWebShare
             data={{
               text: "CryptoDashboard made by Manjeet Maan using React JS.",
               url: "https://crypto-tracker-project-eight.vercel.app/",
@@ -71,9 +61,9 @@ function MainComponent() {
             <Button text={"Share"} outlined={true} />
           </RWebShare>
         </motion.div>
-      </div>
+      </div> 
 
-      <div className="phone-container">
+       <div className="phone-container">
         <motion.img
           className="iphone"
           src={iphone}
@@ -87,7 +77,7 @@ function MainComponent() {
           }}
         />
         <motion.img className="gradient" src={gradient} />
-      </div>
+      </div> 
     </div>
   );
 }

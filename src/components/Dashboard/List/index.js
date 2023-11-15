@@ -5,6 +5,7 @@ import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import { Tooltip } from '@mui/material';
 import { convertNumber } from '../../../functions/convertNumber';
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarIcon from "@mui/icons-material/Star";
 import { RemoveFromWatchlist } from '../../../functions/RemoveFromWatchlist';
@@ -15,7 +16,11 @@ const List  = ({coin}) => {
   const [isCoinAdded, setIsCoinAdded] = useState(watchlist?.includes(coin.id));
   return (
     <Link to={`/coin/${coin.id}`}>
-      <tr   className="list-row">
+      <motion.tr   className="list-row"
+       initial={{ opacity: 0, x: -50 }}
+       whileInView={{ opacity: 1, x: 0 }}
+       transition={{ duration: 0.5, delay: 0.5 }}
+      >
         <Tooltip title="Coin Image" placement="bottom-start">
         <td className='td-image'>
             <img src={coin.image} className='coin-logo' />
@@ -92,7 +97,7 @@ const List  = ({coin}) => {
         </Tooltip>
        
         
-    </tr>
+    </motion.tr>
     </Link>
   )
 }

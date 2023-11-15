@@ -5,6 +5,7 @@ import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 import { IconButton } from '@mui/material';
 import { RemoveFromWatchlist } from '../../../functions/RemoveFromWatchlist';
 import { SaveCoinToWatchlist } from '../../../functions/SaveCoinToWatchlist';
@@ -18,9 +19,14 @@ const Grid  = ({coin}) => {
 
   return (
     <Link to={`/coin/${coin.id}`}>
-         <div   className={`grid-container ${
+         <motion.div   className={`grid-container ${
           coin.price_change_percentage_24h < 0 && "grid-container-red"
-        }`}>
+        }`}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        >
+        
             <div className='info-flex'>
                 <img src={coin.image} className='coin-logo' />
                 <div className='name-col'>
@@ -73,7 +79,7 @@ const Grid  = ({coin}) => {
             </p>
             </div>
             
-        </div>
+        </motion.div>
     </Link>
   )
 }

@@ -76,10 +76,10 @@ const ComparePage = () => {
     if (isCrypto1) {
       setCrypto1(event.target.value);
       console.log("crypto1 id", event.target.value);
-      const data1 = await getCoinData(crypto1);
+      const data1 = await getCoinData(event.target.value);
       coinObject(setCrypto1Data, data1); //For Coin Obj being passed in the List
       if (data1) {       
-        const prices1 = await getCoinPrices(crypto1, days, priceType);
+        const prices1 = await getCoinPrices(event.target.value, days, priceType);
 
         const prices2 = await getCoinPrices(crypto2, days, priceType);
         console.log("PRICES1&2>>>",prices1,prices2)
@@ -93,7 +93,7 @@ const ComparePage = () => {
     } else {
       setCrypto2(event.target.value);
       console.log("crypto2 id", crypto2);
-      const data2 = await getCoinData(crypto2);
+      const data2 = await getCoinData(event.target.value);
       coinObject(setCrypto2Data, data2); //For Coin Obj being passed in the List
       if (data2) {
        // console.log("DAYS>>>>",days)

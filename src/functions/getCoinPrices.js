@@ -4,7 +4,7 @@ export const getCoinPrices = (id, days, priceType) => {
   console.log("DAYS>>>...",days)
   const prices = axios
     .get(
-      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`
+      `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days||30}&interval=daily`
     )
     .then((response) => {
       if (priceType == "market_caps") {
