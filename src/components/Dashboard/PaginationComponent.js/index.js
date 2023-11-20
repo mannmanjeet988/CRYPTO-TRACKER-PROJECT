@@ -18,7 +18,7 @@ export default function PaginationComponent({page,handlePageChange}) {
       sx={{
         color: "var(--white)",
           "& .MuiPaginationItem-text": {
-            color: "#fff !important",
+            color: "var(--blue)",
             border: "1px solid var(--grey)",
           },
           "& .MuiPaginationItem-text:hover": {
