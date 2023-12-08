@@ -7,12 +7,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { RWebShare } from "react-web-share";
 import { toast } from "react-toastify";
-import Footer from "../../Common/Footer";
 
 function MainComponent() {
   return (
     <div className="flex-box">
-       <div className="left-container">
+      <div className="left-container">
         <motion.h1
           className="track-crypto-heading"
           initial={{ opacity: 0, y: 50 }}
@@ -46,11 +45,10 @@ function MainComponent() {
         >
           <Link to="/dashboard">
             {" "}
-            <Button text={"Dashboard"} />
+            <Button text={"Let's  Explore  Dashboard"} />
           </Link>
-          
-          
-         <RWebShare
+
+          {/* <RWebShare
             data={{
               text: "CryptoDashboard made by Manjeet Maan using React JS.",
               url: "https://crypto-tracker-project-eight.vercel.app/",
@@ -59,11 +57,11 @@ function MainComponent() {
             onClick={() => console.log("App Shared!")}
           >
             <Button text={"Share"} outlined={true} />
-          </RWebShare>
+          </RWebShare> */}
         </motion.div>
-      </div> 
+      </div>
 
-       <div className="phone-container">
+      <div className="phone-container">
         <motion.img
           className="iphone"
           src={iphone}
@@ -77,7 +75,7 @@ function MainComponent() {
           }}
         />
         <motion.img className="gradient" src={gradient} />
-      </div> 
+      </div>
     </div>
   );
 }

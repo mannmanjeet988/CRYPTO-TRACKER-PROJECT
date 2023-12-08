@@ -14,13 +14,12 @@ function Header(){
     localStorage.getItem("theme")==="dark"?true:false
     );
 
-    // useEffect(()=>{
-    //   if(localStorage.getItem("theme")!=="dark"){
-    //     setDark()
-    //   } else{
-    //     setLight()
-    //   }
-    // },[])
+
+    useEffect(()=>{
+      if(localStorage.getItem("theme")!=="dark"){
+        setDark()
+      } 
+    },[])
 
     const changeMode = () => {
       if (localStorage.getItem("theme") != "dark") {

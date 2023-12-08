@@ -2,7 +2,6 @@
 
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Common/Footer';
 import Header from './components/Common/Header';
 import DashboardPage from "./pages/DashboardPage"
 import MainComponent from './components/LandingPage/MainComponent';
@@ -10,13 +9,16 @@ import { Dashboard } from '@mui/icons-material';
  import HomePage from './pages/HomePage';
 import CoinPage from './pages/CoinPage';
 import ComparePage from './pages/ComparePage.js/index.js';
+import { RWebShare } from 'react-web-share';
 import WatchListPage from './pages/Watchlist/WatchListPage';
 import { ToastContainer } from 'react-toastify';
 
+
 function App() {
+  
   return (
     <div className="App">
-      {/* <Footer/> */}
+      
       <ToastContainer />
       <BrowserRouter>
           <Routes>

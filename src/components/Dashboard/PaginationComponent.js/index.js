@@ -21,9 +21,9 @@ export default function PaginationComponent({page,handlePageChange}) {
             color: "var(--blue)",
             border: "1px solid var(--grey)",
           },
-          "& .MuiPaginationItem-text:hover": {
-            backgroundColor: "transparent !important",
-          },
+          // "& .MuiPaginationItem-text:hover": {
+          //   backgroundColor: "transparent !important",
+          // },
           "& .Mui-selected  ": {
             backgroundColor: "var(--blue) !important",
             borderColor: "var(--blue) !important",
