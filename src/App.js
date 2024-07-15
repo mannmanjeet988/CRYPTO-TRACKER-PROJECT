@@ -12,7 +12,7 @@ import ComparePage from './pages/ComparePage.js/index.js';
 import { RWebShare } from 'react-web-share';
 import WatchListPage from './pages/Watchlist/WatchListPage';
 import { ToastContainer } from 'react-toastify';
-import GA4React from 'ga-4-react';
+import ReactGA from "react-ga4";
 
 
 function App() {
@@ -22,15 +22,20 @@ function App() {
   //   ga4react.pageview(location.pathname + location.search);
   // }, [location]);
 
-  const location = useLocation();
-  const GA4_MEASUREMENT_ID="G-C6GX6L1YXT"
+  // const location = useLocation();
+  // const GA4_MEASUREMENT_ID="G-C6GX6L1YXT"
 
-  useEffect(() => {
-    const ga4react = new GA4React('GA4_MEASUREMENT_ID');
-    ga4react.initialize().then(ga => {
-      ga.pageview(location.pathname + location.search);
-    });
-  }, [location]);
+  // useEffect(() => {
+  //   const ga4react = new GA4React('GA4_MEASUREMENT_ID');
+  //   ga4react.initialize().then(ga => {
+  //     ga.pageview(location.pathname + location.search);
+  //   });
+  // }, [location]);
+
+  GA4_MEASUREMENT_ID ="G-C6GX6L1YXT"
+  ReactGA.initialize(GA4_MEASUREMENT_ID);
+
+  ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
 
   return (
     <div className="App">
