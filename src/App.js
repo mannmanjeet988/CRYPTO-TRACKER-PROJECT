@@ -20,7 +20,7 @@ function App() {
   //const GA4_MEASUREMENT_ID = "G-3X9Y40C3TC";
   
   useEffect(() => {
-    ReactGA.initialize("G-3X9Y40C3TC");
+    ReactGA.initialize("G-61SDENNHNG");
     ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: document.title });
   }, []);
 
