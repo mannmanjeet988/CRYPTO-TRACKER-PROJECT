@@ -66,7 +66,6 @@ function App() {
     <div className="App">
       <ToastContainer />
       <BrowserRouter>
-        <Header />
         <RoutesComponent />
       </BrowserRouter>
     </div>
