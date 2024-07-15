@@ -56,7 +56,7 @@ import Header from './components/Common/Header';
 import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
 import CoinPage from './pages/CoinPage';
-import ComparePage from './pages/ComparePage';
+import ComparePage from './pages/ComparePage.js/index.js';
 import WatchListPage from './pages/Watchlist/WatchListPage';
 import { ToastContainer } from 'react-toastify';
 import ReactGA from 'react-ga4';
@@ -66,7 +66,6 @@ function App() {
     <div className="App">
       <ToastContainer />
       <BrowserRouter>
-        <Header />
         <RoutesComponent />
       </BrowserRouter>
     </div>
