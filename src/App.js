@@ -18,7 +18,7 @@ import ReactGA from "react-ga4";
 
 function App() {
 
-  //const GA4_MEASUREMENT_ID = "G-3X9Y40C3TC";
+  const location = useLocation();
   
   useEffect(() => {
     ReactGA.initialize("G-61SDENNHNG");
