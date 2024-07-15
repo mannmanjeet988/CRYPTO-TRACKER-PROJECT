@@ -22,8 +22,11 @@ function App() {
   
   useEffect(() => {
     ReactGA.initialize("G-61SDENNHNG");
-    ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: document.title });
   }, []);
+
+  useEffect(() => {
+    ReactGA.send({ hitType: "pageview", page: location.pathname, title: document.title });
+  }, [location]);
 
   return (
     <div className="App">
