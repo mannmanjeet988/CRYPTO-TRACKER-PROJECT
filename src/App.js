@@ -16,26 +16,13 @@ import ReactGA from "react-ga4";
 
 
 function App() {
-  // const location = useLocation();
 
-  // useEffect(() => {
-  //   ga4react.pageview(location.pathname + location.search);
-  // }, [location]);
-
-  // const location = useLocation();
-  // const GA4_MEASUREMENT_ID="G-C6GX6L1YXT"
-
-  // useEffect(() => {
-  //   const ga4react = new GA4React('GA4_MEASUREMENT_ID');
-  //   ga4react.initialize().then(ga => {
-  //     ga.pageview(location.pathname + location.search);
-  //   });
-  // }, [location]);
-
-  GA4_MEASUREMENT_ID ="G-C6GX6L1YXT"
-  ReactGA.initialize(GA4_MEASUREMENT_ID);
-
-  ReactGA.send({ hitType: "pageview", page: "/my-path", title: "Custom Title" });
+  //const GA4_MEASUREMENT_ID = "G-3X9Y40C3TC";
+  
+  useEffect(() => {
+    ReactGA.initialize("G-3X9Y40C3TC");
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: document.title });
+  }, []);
 
   return (
     <div className="App">
