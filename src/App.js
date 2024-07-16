@@ -19,7 +19,7 @@
 // function App() {
 
 //   const location = useLocation();
-  
+
 //   useEffect(() => {
 //     ReactGA.initialize("G-61SDENNHNG");
 //   }, []);
@@ -28,10 +28,10 @@
 //     ReactGA.send({ hitType: "pageview", page: location.pathname, title: document.title });
 //   }, [location]);
 
-  
+
 //   return (
 //     <div className="App">
-      
+
 //       <ToastContainer />
 //       <BrowserRouter>
 //           <Routes>
@@ -42,7 +42,7 @@
 //             <Route path="/watchlist" element ={<WatchListPage />} />
 //           </Routes>
 //       </BrowserRouter>
-      
+
 //     </div>
 //   );
 // }
@@ -60,15 +60,18 @@ import ComparePage from './pages/ComparePage.js/index.js';
 import WatchListPage from './pages/Watchlist/WatchListPage';
 import { ToastContainer } from 'react-toastify';
 import ReactGA from 'react-ga4';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 function App() {
   return (
+    <HelmetProvider>
     <div className="App">
       <ToastContainer />
       <BrowserRouter>
         <RoutesComponent />
       </BrowserRouter>
     </div>
+    </HelmetProvider>
   );
 }
 
@@ -106,14 +109,36 @@ function RoutesComponent() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
-      <Route path="/coin/:id" element={<CoinPage />} />
-      <Route path="/compare" element={<ComparePage />} />
-      <Route path="/watchlist" element={<WatchListPage />} />
-    </Routes>
+    <>
+      <Helmet>
+        <title>{getPageTitle(location.pathname)}</title>
+      </Helmet>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/coin/:id" element={<CoinPage />} />
+        <Route path="/compare" element={<ComparePage />} />
+        <Route path="/watchlist" element={<WatchListPage />} />
+      </Routes>
+    </>
   );
+}
+
+function getPageTitle(pathname) {
+  switch (pathname) {
+    case '/':
+      return 'Home Page | Crypto Tracker';
+    case '/dashboard':
+      return 'Dashboard | Crypto Tracker';
+    case '/coin/:id':
+      return 'Coin Details | Crypto Tracker';
+    case '/compare':
+      return 'Compare Coins | Crypto Tracker';
+    case '/watchlist':
+      return 'Watchlist | Crypto Tracker';
+    default:
+      return 'Crypto Tracker';
+  }
 }
 
 export default App;
