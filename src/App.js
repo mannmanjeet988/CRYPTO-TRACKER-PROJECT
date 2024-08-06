@@ -60,59 +60,14 @@ import ComparePage from './pages/ComparePage.js/index.js';
 import WatchListPage from './pages/Watchlist/WatchListPage';
 import { ToastContainer } from 'react-toastify';
 import ReactGA from 'react-ga4';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 
 function App() {
   return (
-    <HelmetProvider>
+   
     <div className="App">
       <ToastContainer />
       <BrowserRouter>
-        <RoutesComponent />
-      </BrowserRouter>
-    </div>
-    </HelmetProvider>
-  );
-}
-
-function RoutesComponent() {
-  const location = useLocation();
-
-  useEffect(() => {
-    ReactGA.initialize("G-61SDENNHNG");
-    ReactGA.ga('set', 'debug_mode', true);  // Enable Debug Mode
-    console.log("GA initialized with ID:", "G-3X9Y40C3TC");
-  }, []);
-
-  useEffect(() => {
-    ReactGA.send({ hitType: 'pageview', page: location.pathname, title: document.title });
-    console.log("Pageview sent:", { page: location.pathname, title: document.title });
-  }, [location]);
-
-  const logErrorEvent = (error) => {
-    ReactGA.event({
-      category: 'Error',
-      action: 'An error occurred',
-      label: error.message,
-      nonInteraction: true,
-    });
-  };
-
-  // Example of how to log an error
-  useEffect(() => {
-    try {
-      // Simulate an error
-      throw new Error('This is a simulated error');
-    } catch (error) {
-      logErrorEvent(error);
-    }
-  }, []);
-
-  return (
-    <>
-      <Helmet>
-        <title>{getPageTitle(location.pathname)}</title>
-      </Helmet>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
@@ -120,25 +75,35 @@ function RoutesComponent() {
         <Route path="/compare" element={<ComparePage />} />
         <Route path="/watchlist" element={<WatchListPage />} />
       </Routes>
-    </>
+    
+      </BrowserRouter>
+    </div>
+    
   );
+
+ 
+    
+     
+      
+  
 }
 
-function getPageTitle(pathname) {
-  switch (pathname) {
-    case '/':
-      return 'Home Page | Crypto Tracker';
-    case '/dashboard':
-      return 'Dashboard | Crypto Tracker';
-    case '/coin/:id':
-      return 'Coin Details | Crypto Tracker';
-    case '/compare':
-      return 'Compare Coins | Crypto Tracker';
-    case '/watchlist':
-      return 'Watchlist | Crypto Tracker';
-    default:
-      return 'Crypto Tracker';
-  }
-}
+
+// function getPageTitle(pathname) {
+//   switch (pathname) {
+//     case '/':
+//       return 'Home Page | Crypto Tracker';
+//     case '/dashboard':
+//       return 'Dashboard | Crypto Tracker';
+//     case '/coin/:id':
+//       return 'Coin Details | Crypto Tracker';
+//     case '/compare':
+//       return 'Compare Coins | Crypto Tracker';
+//     case '/watchlist':
+//       return 'Watchlist | Crypto Tracker';
+//     default:
+//       return 'Crypto Tracker';
+//   }
+// }
 
 export default App;
