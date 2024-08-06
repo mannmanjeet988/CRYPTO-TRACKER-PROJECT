@@ -81,7 +81,7 @@ function RoutesComponent() {
   useEffect(() => {
     ReactGA.initialize("G-61SDENNHNG");
     ReactGA.ga('set', 'debug_mode', true);  // Enable Debug Mode
-    console.log("GA initialized with ID:", "G-61SDENNHNG");
+    console.log("GA initialized with ID:", "G-3X9Y40C3TC");
   }, []);
 
   useEffect(() => {
